@@ -1,5 +1,5 @@
 import {CityType} from "../02/02_02";
-import {addMoneyBudget, doesStudentLiveIn} from "./03";
+import {addMoneyBudget, doesStudentLiveIn, repairHouse} from "./03";
 
 
 let city: CityType;
@@ -54,4 +54,10 @@ test('budget should be changed for FIRE-STATION', () => {
 
     expect(city.governmentBuildings[1].budget).toBe(400000)
 
+})
+
+test('Houses should be repaired', () => {
+    repairHouse(city.houses[1])
+
+    expect(city.houses[1].repaired).toBeTruthy()
 })

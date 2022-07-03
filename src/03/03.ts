@@ -1,5 +1,5 @@
 import {StudentType} from "../02/02";
-import {GovernmentBuildings} from "../02/02_02";
+import {GovernmentBuildings, HouseType} from "../02/02_02";
 
 debugger
 
@@ -24,4 +24,8 @@ export const doesStudentLiveIn=(s:StudentType, cityName:string)=>{
 
 export const addMoneyBudget= (building: GovernmentBuildings, budget: number)=>{
 building.budget += budget
+}
+
+export const repairHouse= (houseType: HouseType)=>{
+    houseType.repaired = true
 }
