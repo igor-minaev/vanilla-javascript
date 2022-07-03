@@ -1,5 +1,5 @@
 import {StudentType} from "../02/02";
-import {GovernmentBuildings, HouseType} from "../02/02_02";
+import {CityType, GovernmentBuildings, HouseType} from "../02/02_02";
 
 debugger
 
@@ -36,4 +36,9 @@ export function toFireStaff(building: GovernmentBuildings, staffCountToFire: num
 
 export const toHireStaff = (building: GovernmentBuildings, staffCountToHire: number) => {
     building.staffCount += staffCountToHire;
+}
+
+export function createMessage(city: CityType){
+    //return 'Hello ' + city.title +  ' citizens. I want you be happy. All ' +  city.citizensNumber + ' men'
+    return `Hello ${city.title} citizens. I want you be happy. All ${city.citizensNumber} men`
 }
