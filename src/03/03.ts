@@ -1,4 +1,5 @@
 import {StudentType} from "../02/02";
+import {GovernmentBuildings} from "../02/02_02";
 
 debugger
 
@@ -19,4 +20,8 @@ export function makeSudentActive(s: StudentType) {
 
 export const doesStudentLiveIn=(s:StudentType, cityName:string)=>{
     return s.address.city.title===cityName
+}
+
+export const addMoneyBudget= (building: GovernmentBuildings, budget: number)=>{
+building.budget += budget
 }
