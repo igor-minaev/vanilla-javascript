@@ -1,5 +1,5 @@
 import {CityType} from "../02/02_02";
-import {addMoneyBudget, createMessage, doesStudentLiveIn, repairHouse, toFireStaff, toHireStaff} from "./03";
+import {addMoneyBudget, createMessage, repairHouse, toFireStaff, toHireStaff} from "./03";
 
 
 let city: CityType;
@@ -79,5 +79,5 @@ test('staff should be repaired', () => {
 test('Greeting message should be correct for city', () => {
     const message = createMessage(city)
 
-    expect(city.governmentBuildings[1].staffCount).toBe('Hello New York citizens. I want you be happy. All  1000000 men')
+    expect(message).toBe('Hello New York citizens. I want you be happy. All 1000000 men')
 })

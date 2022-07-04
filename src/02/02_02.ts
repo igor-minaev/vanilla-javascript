@@ -8,12 +8,13 @@ export type AdressType = {
 }
 
 export type HouseType = {
+    id?: number
     buildedAt: number
     repaired: boolean
     address: AdressType
 }
 
-export type GovernmentBuildings={
+export type GovernmentBuildings = {
     type: 'HOSPITAL' | 'FIRE-STATION'
     budget: number
     staffCount: number
