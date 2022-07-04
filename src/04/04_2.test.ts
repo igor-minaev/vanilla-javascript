@@ -1,5 +1,5 @@
 import {CityType} from "../02/02_02";
-import {demolishHousesOnTheStreet} from "./04_2";
+import {demolishHousesOnTheStreet, getBuildingsWithStaffCountGreaterThen} from "./04_2";
 
 
 let city: CityType;
@@ -53,10 +53,10 @@ test('Houses should be destroyed', () => {
     expect(city.houses[0].id).toBe(1)
 })
 
-test('Houses should be destroyed', () => {
-    demolishHousesOnTheStreet(city, 'Happy street')
+test('buildings with correct staff count', () => {
+    let buildings = getBuildingsWithStaffCountGreaterThen(city.governmentBuildings, 500)
 
 
-    expect(city.houses.length).toBe(2)
-    expect(city.houses[0].id).toBe(1)
+    expect(buildings.length).toBe(1)
+    expect(buildings[0].type).toBe('FIRE-STATION')
 })
