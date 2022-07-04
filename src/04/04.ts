@@ -7,7 +7,7 @@ const predicate = (age: number) => {
 const oldAges = [100]  // > 90
 
 
-type CourseType = {
+ type CourseType = {
     title: string
     price: number
 }
