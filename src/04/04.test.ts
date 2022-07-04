@@ -10,3 +10,20 @@ test('should take old men older then 90', () => {
     expect(oldAges.length).toBe(1)
     expect(oldAges[0]).toBe(100)
 })
+
+test('should take courses chipper 160', () => {
+    const courses = [
+        {title: 'CSS', price: 100},
+        {title: 'JS', price: 200},
+        {title: 'REACT', price: 150}
+    ]
+    const cheapPredicate = (course: CourseType) => {
+        return course.price < 160;
+    }
+
+    const cheapCourses = courses.filter(cheapPredicate);
+
+    expect(cheapCourses.length).toBe(2)
+    expect(cheapCourses[0].title).toBe('CSS')
+    expect(cheapCourses[1].title).toBe('REACT')
+})
