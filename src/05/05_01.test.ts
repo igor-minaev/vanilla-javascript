@@ -1,4 +1,4 @@
-import {ManType} from "./05_01";
+import {createGreetingMessage, ManType} from "./05_01";
 
 let people: Array<ManType> = []
 
@@ -11,7 +11,7 @@ beforeEach(()=>{
 })
 
 test('should get array greeting messages',()=>{
-    const messages = people.map(man=> `Hello ${man.name.split(' ')[0]}. Welcome to IT-Incubator`)
+    const messages = createGreetingMessage(people)
 
     expect(messages.length).toBe(3)
     expect(messages[0]).toBe('Hello Andrew. Welcome to IT-Incubator')
