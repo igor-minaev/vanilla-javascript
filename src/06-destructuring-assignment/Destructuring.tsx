@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 export type ManType = {
     name: string
@@ -13,15 +13,35 @@ export type ManType = {
 type PropsType = {
     title: string
     man: ManType
+    food: Array<string>
+    car: { model: string }
 }
-export const ManComponent: React.FC<PropsType> = (props) => {
-    const {title} = props
-    const {name}=props.man
+
+function useDimychState(m: string) {
+    return [m, function () {
+    }]
+}
+
+function useDimychState2(m: string) {
+    return {
+        message: m, setMessage: function () {
+        }
+    }
+}
+
+export const ManComponent: React.FC<PropsType> = ({title, man, ...props}) => {
+    // const {title, man, ...restProps} = props
+
+    const [message, setMessage] = useDimychState('hello')
+
     return <div>
         <h1>{title}</h1>
         <hr/>
         <div>
-            {name}
+            {props.car.model}
+        </div>
+        <div>
+            {man.name}
         </div>
     </div>
 }
